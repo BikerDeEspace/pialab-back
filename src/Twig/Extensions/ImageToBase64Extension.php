@@ -34,7 +34,7 @@ class ImageToBase64Extension extends AbstractExtension
     public function convertImageToBase64(string $imagePath): string
     {
         $filePath = $this->KernelProjectDir . '/public/' . $imagePath;
-        var_dump($imagePath);
+
         $base64String = sprintf(
             'data:%s;base64,%s',
             mime_content_type($filePath),
