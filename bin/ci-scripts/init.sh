@@ -12,6 +12,9 @@ else
     exit 42
 fi
 
+# COMPOSER INSTALL
+composer install --no-interaction --no-scripts
+
 # INIT DB SCRIPT
 ## CREATE DATABASE
 bin/console doctrine:migrations:migrate --no-interaction
@@ -35,7 +38,7 @@ then
     bin/console pia:application:create --name="${CLIENT_NAME}" --url="${CLIENTURL}" --client-id=${CLIENT_ID} --client-secret=${CLIENT_SECRET}
 fi
 
-
+#POST INSTALL
 bin/console assets:install --no-interaction
 bin/console cache:warmup --no-interaction
 
