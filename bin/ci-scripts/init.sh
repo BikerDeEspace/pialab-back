@@ -12,9 +12,6 @@ else
     exit 42
 fi
 
-# COMPOSER INSTALL
-composer install --no-interaction --no-scripts
-
 # INIT DB SCRIPT
 ## CREATE DATABASE
 bin/console doctrine:migrations:migrate --no-interaction
